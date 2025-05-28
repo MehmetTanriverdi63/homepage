@@ -100,7 +100,7 @@
 
 		.hero .cta-button {
 		  margin-top: 1rem;
-		  background-color: var(--primary);
+		  background-color: var(--secondary);
 		  color: var(--text-light);
 		  padding: 0.75rem 1.5rem;
 		  font-size: 1rem;
@@ -306,10 +306,14 @@
 			width: 100%;
 		  }
 
-		  .tech-slider {
-			font-size: 1rem;
-			padding: 1rem 0.5rem;
-		  }
+		  .tech-slider i {
+		   font-size: 1.2rem;
+		   color: #0072ff;
+		 }
+		 
+		 .tech-slider span:hover {
+		  transform: scale(1.05);
+		}
 
 		  .section > div {
 			flex-direction: column !important;
@@ -317,14 +321,102 @@
 		  }
 		}
 
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s ease-out;
+}
+.fade-in.visible {
+  opacity: 1;
+  transform: none;
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--text-light);
+  font-size: 1.5rem;
+  cursor: pointer;
+  margin-left: auto;
+}
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  nav ul {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--primary);
+    width: 100%;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    z-index: 999;
+  }
+
+  nav ul.show {
+    display: flex;
+  }
+}
+
+.logo {
+  background-color: var(--accent);
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  display: inline-block;
+}
+
+.logo {
+  color: var(--text-light);
+}
+
+@media (max-width: 768px) {
+  #services > div {
+    gap: 1rem !important;
+    padding-top: 0.5rem !important;
+  }
+
+  #services > div > div {
+    padding: 1rem 1rem !important;
+    max-width: 100% !important;
+    flex: 1 1 100%;
+    margin: 0 auto;
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.05);
+    border-radius: 8px;
+  }
+
+  #services h3 {
+    font-size: 1.05rem;
+    margin-bottom: 0.4rem;
+  }
+
+  #services p {
+    font-size: 0.9rem;
+    line-height: 1.4;
+    margin: 0;
+  }
+}
+
+
 </style>
 </head>
 
 <body>
   <header>
-    <nav>
-     <div class="logo"><i class="fas fa-network-wired"></i> Dridi Digital Consulting FZE</div>
 
+    <nav>
+<div class="logo" style="background-color: var(--accent); padding: 0.5rem 1rem; border-radius: 8px;">
+  <i class="fas fa-network-wired"></i> Dridi Digital Consulting FZE
+</div>
+  <!-- HAMBURGER BUTTON für Mobile -->
+  <button class="menu-toggle" onclick="toggleMenu()" aria-label="Menü öffnen/schließen">
+    <i class="fas fa-bars"></i>
+  </button>
       <ul>
         <li><a href="#about">Über uns</a></li>
         <li><a href="#services">Leistungen</a></li>
@@ -366,35 +458,49 @@
       </blockquote>
     </section>
 
-    <section id="services" class="section" style="background-color: var(--bg-light); padding: 4rem 1rem; margin-bottom: 2rem; border-radius: 12px; box-shadow: 0 8px 24px rgba(56, 189, 248, 0.2);">
-      <h2>Unsere Leistungen</h2>
-      <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem; padding-top: 1rem;">
-        <div style="background-color: var(--bg-light); border-radius: 12px; padding: 1.5rem; max-width: 300px; flex: 1 1 250px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
-          <h3>Manuelles Testing</h3>
-          <p>Funktionale Tests, Regressionstests, exploratives Testen</p>
-        </div>
-        <div style="background-color: var(--bg-light); border-radius: 12px; padding: 1.5rem; max-width: 300px; flex: 1 1 250px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
-          <h3>Testautomatisierung</h3>
-          <p>Selenium, Cypress, API-Tests, CI/CD-Integration</p>
-        </div>
-        <div style="background-color: var(--bg-light); border-radius: 12px; padding: 1.5rem; max-width: 300px; flex: 1 1 250px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
-          <h3>Frontend & Backend-Tests</h3>
-          <p>Usability, Kompatibilität, Schnittstellen</p>
-        </div>
-        <div style="background-color: var(--bg-light); border-radius: 12px; padding: 1.5rem; max-width: 300px; flex: 1 1 250px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
-          <h3>Sec & Performance Testing</h3>
-          <p>JMeter, Lastest & Stresstests</p>
-        </div>
-        <div style="background-color: var(--bg-light); border-radius: 12px; padding: 1.5rem; max-width: 300px; flex: 1 1 250px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
-          <h3>User Acceptance Testing (UAT)</h3>
-          <p>Abnahmeprozesse und Kundenbegleitung</p>
-        </div>
-        <div style="background-color: var(--bg-light); border-radius: 12px; padding: 1.5rem; max-width: 300px; flex: 1 1 250px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
-          <h3>Requirements Engineering</h3>
-          <p>Workshops, Anforderungsanalyse, Spezifikation</p>
-        </div>
-      </div>
-    </section>
+<section id="services" class="section" style="background-color: var(--bg-light); padding: 4rem 1rem; margin-bottom: 2rem; border-radius: 12px; box-shadow: 0 8px 24px rgba(56, 189, 248, 0.2);">
+  <h2>Unsere Leistungen</h2>
+  <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem; padding-top: 1rem;">
+
+    <div style="background-color: var(--bg-light); border-radius: 12px; padding: 1.5rem; max-width: 300px; flex: 1 1 250px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+      <h3>Manuelles Testing</h3><br>
+      <p>Funktionale Tests, Regressionstests, exploratives Testen.</p>
+      <p>Unsere erfahrenen Tester prüfen Ihre Software gezielt von Hand, um menschliche Perspektiven und kritische Szenarien abzudecken.</p>
+    </div>
+
+    <div style="background-color: var(--bg-light); border-radius: 12px; padding: 1.5rem; max-width: 300px; flex: 1 1 250px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+      <h3>Testautomatisierung</h3><br>
+      <p>Selenium, Cypress, API-Tests, CI/CD-Integration.</p>
+      <p>Wir automatisieren Ihre Testprozesse für Effizienz, Wiederholbarkeit und nahtlose Integration in Ihre Entwicklungs-Pipelines.</p>
+    </div>
+
+    <div style="background-color: var(--bg-light); border-radius: 12px; padding: 1.5rem; max-width: 300px; flex: 1 1 250px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+      <h3>Frontend & Backend-Tests</h3>
+      <p>Usability, Kompatibilität, Schnittstellen.</p><br>
+      <p>Wir testen Benutzeroberflächen und Systemlogik umfassend, damit Ihre Anwendung stabil, zugänglich und browserübergreifend funktioniert.</p>
+    </div>
+
+    <div style="background-color: var(--bg-light); border-radius: 12px; padding: 1.5rem; max-width: 300px; flex: 1 1 250px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+      <h3>Security & Performance Testing</h3>
+      <p>JMeter, Last- & Stresstests.</p><br>
+      <p>Wir prüfen Sicherheitslücken und Belastbarkeit, damit Ihre Software auch unter hoher Last stabil und geschützt bleibt.</p>
+    </div>
+
+    <div style="background-color: var(--bg-light); border-radius: 12px; padding: 1.5rem; max-width: 300px; flex: 1 1 250px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+      <h3>User Acceptance Testing (UAT)</h3>
+      <p>Abnahmeprozesse und Kundenbegleitung.</p><br>
+      <p>Gemeinsam mit Ihren Anwendern stellen wir sicher, dass die Lösung Ihren fachlichen Anforderungen vollständig entspricht.</p>
+    </div>
+
+    <div style="background-color: var(--bg-light); border-radius: 12px; padding: 1.5rem; max-width: 300px; flex: 1 1 250px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+      <h3>Requirements Engineering</h3><br>
+      <p>Workshops, Anforderungsanalyse, Spezifikation.</p>
+      <p>Wir helfen Ihnen, klare und realistische Anforderungen zu definieren – als Basis für erfolgreiche IT-Projekte.</p>
+    </div>
+
+  </div>
+</section>
+
 
     <section id="technologies" class="section" style="background-color: var(--bg-light); padding: 4rem 1rem; margin-bottom: 2rem; border-radius: 12px; box-shadow: 0 8px 24px rgba(56, 189, 248, 0.2);">
       <h2>Unsere Technologien</h2>
@@ -414,6 +520,9 @@
         <span><i class="fas fa-play"></i>Playwright</span>
         <span><i class="fas fa-desktop"></i>BrowserStack</span>
       </div>
+
+
+</div>
     </section>
 
     <section id="team" class="team-section on-dark-bg">
@@ -437,13 +546,52 @@
       </div>
     </section>
 
+<section id="industries" style="background-color: var(--bg-light); padding: 4rem 1rem; margin-bottom: 2rem; border-radius: 12px; box-shadow: 0 8px 24px rgba(56, 189, 248, 0.2);">
+  <h2>Unsere Branchenkompetenz</h2>
+<p style="text-align: center; max-width: 700px; margin: 0 auto 3rem; font-size: 1.1rem; color: #555;">
+  Unsere Mitarbeiter:innen bringen fundierte Erfahrung aus verschiedensten Schlüsselbranchen mit – 
+  von Hochtechnologie über Finanzwesen bis zur globalen Logistik. <br>
+  Wir sprechen die Sprache Ihrer Industrie – und liefern Ergebnisse, die zählen.
+</p>
+
+  <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem;">
+    <div class="fade-in" style="background-color: #fff; border-radius: 12px; padding: 2rem; width: 220px; text-align: center; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+      <div style="font-size: 2.5rem;">🚢</div>
+      <h3>Shipping</h3>
+      <p style="color: #666;">Digitale Lösungen für globale Schifffahrt.</p>
+    </div>
+    <div class="fade-in" style="background-color: #fff; border-radius: 12px; padding: 2rem; width: 220px; text-align: center; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+      <div style="font-size: 2.5rem;">📦</div>
+      <h3>Cargo</h3>
+      <p style="color: #666;">Effiziente Transport- und Logistikprozesse.</p>
+    </div>
+    <div class="fade-in" style="background-color: #fff; border-radius: 12px; padding: 2rem; width: 220px; text-align: center; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+      <div style="font-size: 2.5rem;">🚆</div>
+      <h3>Rail</h3>
+      <p style="color: #666;">Digitale Transformation im Bahnwesen.</p>
+    </div>
+    <div class="fade-in" style="background-color: #fff; border-radius: 12px; padding: 2rem; width: 220px; text-align: center; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+      <div style="font-size: 2.5rem;">🏦</div>
+      <h3>Banking</h3>
+      <p style="color: #666;">Sichere & smarte Finanzlösungen.</p>
+    </div>
+    <div class="fade-in" style="background-color: #fff; border-radius: 12px; padding: 2rem; width: 220px; text-align: center; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+      <div style="font-size: 2.5rem;">🚗</div>
+      <h3>Automobil</h3>
+      <p style="color: #666;">Innovation für die Mobilität von morgen.</p>
+    </div>
+  </div>
+</section>
+
+
+
     <section id="careers" class="section" style="background-color: var(--bg-light); padding: 4rem 1rem; margin-bottom: 2rem; border-radius: 12px; box-shadow: 0 8px 24px rgba(56, 189, 248, 0.2); text-align: center;">
       <h2>Karriere </h2>
       <p>Du willst mit uns die Softwarequalität von morgen gestalten? Wir suchen leidenschaftliche Tester:innen, Automatisierungsprofis und Analyst:innen!</p>
       <ul style="list-style: none; padding: 0; max-width: 600px; margin: 2rem auto;">
         <li><strong>QA Engineer (m/w/d):</strong> Manuelles und automatisiertes Testen</li>
         <li><strong>Testmanager (m/w/d):</strong> Projektsteuerung und Kundenkommunikation</li>
-        <li><strong>Performance Tester (m/w/d):</strong> Lastest und Stresstests mit JMeter</li>
+        <li><strong>Performance Tester (m/w/d):</strong> Last- und Stresstests mit JMeter</li>
         <li><strong>Werkstudent:in IT-Testing:</strong> Einstieg für Studierende</li>
       </ul>
       <form class="contact-form" action="https://formspree.io/f/moqpdwld" method="POST" aria-label="Bewerbungsformular">
@@ -529,4 +677,28 @@
       spacing: 18.0
     });
   </script>
+
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const fadeElems = document.querySelectorAll(".fade-in");
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+        }
+      });
+    }, { threshold: 0.1 });
+
+    fadeElems.forEach(el => observer.observe(el));
+  });
+</script>
+
+<script>
+  function toggleMenu() {
+    const nav = document.querySelector('nav ul');
+    nav.classList.toggle('show');
+  }
+</script>
+
 </body>
