@@ -6,7 +6,7 @@
   <meta name="description" content="Ihr Partner für Software Testing & QA – QualiTest Consulting">
   <meta name="keywords" content="Software Testing, QA, Beratung, IT, Automatisierung, Testmanagement">
   
-  <title>Dridi Digital Consulting</title>
+  <title>Dridi Digital Consulting </title>
   
   <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" />
@@ -361,6 +361,40 @@ div[style*="box-shadow"]:hover {
     display: none !important;
   }
 }
+.tech-slider {
+  overflow: hidden;
+  background: var(--bg-light);
+  padding: 1rem 0;
+  position: relative;
+}
+
+.tech-slider .track {
+  display: flex;
+  width: max-content;
+  animation: slide-left 30s linear infinite;
+}
+
+.tech-slider span {
+  display: flex;
+  align-items: center;
+  padding: 0 2rem;
+  font-size: 1.2rem;
+  white-space: nowrap;
+}
+
+.tech-slider i {
+  margin-right: 8px;
+}
+
+/* Keyframes: langsamer und gleichmäßiger */
+@keyframes slide-left {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-25%);
+  }
+}
 
 </style>
 </head>
@@ -459,22 +493,40 @@ div[style*="box-shadow"]:hover {
 
     <section id="technologies" class="section" style="background-color: var(--bg-light); padding: 4rem 1rem; margin-bottom: 2rem; border-radius: 12px; box-shadow: 0 8px 24px rgba(56, 189, 248, 0.2);">
       <h2>Unsere Technologien</h2>
-      <div class="tech-slider">
-        <span><i class="fab fa-safari"></i>Selenium</span>
-        <span><i class="fas fa-vial"></i>Cypress</span>
-        <span><i class="fas fa-tachometer-alt"></i>JMeter</span>
-        <span><i class="fas fa-flask"></i>Postman</span>
-        <span><i class="fab fa-jira"></i>Jira</span>
-        <span><i class="fas fa-bug"></i>Xray</span>
-        <span><i class="fas fa-project-diagram"></i>TestRail</span>
-        <span><i class="fas fa-book"></i>Confluence</span>
-        <span><i class="fab fa-github"></i>GitHub</span>
-        <span><i class="fab fa-gitlab"></i>GitLab</span>
-        <span><i class="fas fa-code-branch"></i>CI/CD</span>
-        <span><i class="fas fa-plug"></i>REST APIs</span>
-        <span><i class="fas fa-play"></i>Playwright</span>
-        <span><i class="fas fa-desktop"></i>BrowserStack</span>
-      </div>
+   <div class="tech-slider">
+  <div class="track">
+    <span><i class="fab fa-safari"></i>Selenium</span>
+    <span><i class="fas fa-vial"></i>Cypress</span>
+    <span><i class="fas fa-tachometer-alt"></i>JMeter</span>
+    <span><i class="fas fa-flask"></i>Postman</span>
+    <span><i class="fab fa-jira"></i>Jira</span>
+    <span><i class="fas fa-bug"></i>Xray</span>
+    <span><i class="fas fa-project-diagram"></i>TestRail</span>
+    <span><i class="fas fa-book"></i>Confluence</span>
+    <span><i class="fab fa-github"></i>GitHub</span>
+    <span><i class="fab fa-gitlab"></i>GitLab</span>
+    <span><i class="fas fa-code-branch"></i>CI/CD</span>
+    <span><i class="fas fa-plug"></i>REST APIs</span>
+    <span><i class="fas fa-play"></i>Playwright</span>
+    <span><i class="fas fa-desktop"></i>BrowserStack</span>
+
+    <!-- Duplizieren für nahtlosen Loop -->
+    <span><i class="fab fa-safari"></i>Selenium</span>
+    <span><i class="fas fa-vial"></i>Cypress</span>
+    <span><i class="fas fa-tachometer-alt"></i>JMeter</span>
+    <span><i class="fas fa-flask"></i>Postman</span>
+    <span><i class="fab fa-jira"></i>Jira</span>
+    <span><i class="fas fa-bug"></i>Xray</span>
+    <span><i class="fas fa-project-diagram"></i>TestRail</span>
+    <span><i class="fas fa-book"></i>Confluence</span>
+    <span><i class="fab fa-github"></i>GitHub</span>
+    <span><i class="fab fa-gitlab"></i>GitLab</span>
+    <span><i class="fas fa-code-branch"></i>CI/CD</span>
+    <span><i class="fas fa-plug"></i>REST APIs</span>
+    <span><i class="fas fa-play"></i>Playwright</span>
+    <span><i class="fas fa-desktop"></i>BrowserStack</span>
+  </div>
+</div>
 
 
 <section id="industries" style="background-color: var(--bg-light); padding: 4rem 1rem; margin-bottom: 2rem; border-radius: 12px; box-shadow: 0 8px 24px rgba(56, 189, 248, 0.2);">
