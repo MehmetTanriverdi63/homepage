@@ -352,6 +352,7 @@ div[style*="box-shadow"]:hover {
   height: 100vh;
   z-index: -1;
 }
+
 @media (min-width: 769px) {
   nav ul {
     display: flex !important;
@@ -361,6 +362,7 @@ div[style*="box-shadow"]:hover {
     display: none !important;
   }
 }
+
 .tech-slider {
   overflow: hidden;
   background: var(--bg-light);
@@ -407,6 +409,71 @@ div[style*="box-shadow"]:hover {
     display: block;
   }
 }
+
+ .tool-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      justify-content: center;
+      align-items: stretch;
+      margin-top: 2rem;
+    }
+
+    .tool-card {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      background-color: #ffffff;
+      border-radius: 16px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      text-align: center;
+      width: 250px;
+      padding: 2rem 1.5rem;
+      min-height: 360px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .tool-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    }
+
+    .tool-card img {
+      width: 60px;
+      height: 60px;
+      margin-bottom: 1.5rem;
+      object-fit: contain;
+    }
+
+    .tool-card h3 {
+      margin: 0.5rem 0;
+      font-size: 1.1rem;
+      color: #0f172a;
+      font-weight: bold;
+    }
+
+    .tool-card p {
+      font-size: 0.95rem;
+      color: #334155;
+      margin-top: 0.5rem;
+      line-height: 1.5;
+    }
+
+    @media (max-width: 768px) {
+      .tool-grid {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .tool-card {
+        width: 80%;
+        max-width: 200x;
+        min-height: auto;
+      }
+    }
+
+
 </style>
 </head>
 
@@ -501,7 +568,61 @@ div[style*="box-shadow"]:hover {
   </div>
 </section>
 
+<section id="frameworks" class="section" style="background-color: var(--bg-light); padding: 4rem 1rem; margin-bottom: 2rem; border-radius: 12px; box-shadow: 0 8px 24px rgba(56, 189, 248, 0.2);">
+  <h2>Frameworks & Lösungen</h2>
+  <p style="text-align: center; max-width: 800px; margin: 0 auto 2rem; font-size: 1.2rem;">
+    Sie haben ein engagiertes Team, aber möchten keine neuen Mitarbeiter einstellen, nur um ein weiteres Framework zu integrieren?<br>
+    Kein Problem! Wir bieten Ihnen einsatzbereite Test-Frameworks, die Ihr Team schnell adaptieren und erweitern kann.
+    Wir unterstützen Sie bei der Integration, Pipeline-Anbindung und Schulung Ihrer Mitarbeiter.
+  </p>
 
+  <div style="
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 2rem;
+    justify-items: center;
+    align-items: start;
+    max-width: 1400px;
+    margin: 2rem auto 0;
+  ">
+
+    <!-- Selenium -->
+    <div class="card" style="background-color: white; padding: 1.5rem; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); text-align: center;">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/selenium/selenium-original.svg" alt="Selenium" style="width: 60px; margin-bottom: 1rem;">
+      <h3>Selenium</h3>
+      <p>Open-Source UI-Testautomatisierung mit breiter Community & Flexibilität.      </p>
+    </div>
+
+    <!-- Cypress -->
+    <div class="card" style="background-color: white; padding: 1.5rem; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); text-align: center;">
+      <img src="https://avatars.githubusercontent.com/u/8908513?s=200&v=4" alt="Cypress" style="width: 60px; margin-bottom: 1rem; border-radius: 12px;">
+      <h3>Cypress</h3>
+      <p>Modernes JavaScript-basiertes Framework für End-to-End Tests im Browser.     </p>
+    </div>
+
+    <!-- Playwright -->
+    <div class="card" style="background-color: white; padding: 1.5rem; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); text-align: center;">
+      <img src="https://playwright.dev/img/playwright-logo.svg" alt="Playwright" style="width: 60px; margin-bottom: 1rem;">
+      <h3>Playwright</h3>
+      <p>Neue Generation von UI-Automatisierung – schnell, plattformübergreifend.</p>
+    </div>
+
+    <!-- REST Assured -->
+    <div class="card" style="background-color: white; padding: 1.5rem; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); text-align: center;">
+      <img src="https://www.vectorlogo.zone/logos/getpostman/getpostman-icon.svg" alt="Postman" style="width: 60px; margin-bottom: 1rem;">
+      <h3>REST Assured</h3>
+      <p>Java-basiertes Framework für präzise API-Tests – ideal für RESTful Services. </p>
+    </div>
+
+    <!-- Postman -->
+    <div class="card" style="background-color: white; padding: 1.5rem; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); text-align: center;">
+      <img src="https://www.vectorlogo.zone/logos/getpostman/getpostman-icon.svg" alt="Postman" style="width: 60px; margin-bottom: 1rem;">
+      <h3>Postman</h3>
+      <p>Beliebte API-Testplattform für REST- & GraphQL-APIs. Perfekt für CI/CD.      </p>
+    </div>
+
+  </div>
+</section>
     <section id="technologies" class="section" style="background-color: var(--bg-light); padding: 4rem 1rem; margin-bottom: 2rem; border-radius: 12px; box-shadow: 0 8px 24px rgba(56, 189, 248, 0.2);">
       <h2>Unsere Technologien</h2>
    <div class="tech-slider">
@@ -552,41 +673,41 @@ div[style*="box-shadow"]:hover {
 
     <!-- Beispiel: Shipping -->
     <div class="fade-in" style="background-color: #0f172a; border-radius: 12px; padding: 2rem; width: 220px; text-align: center; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
-      <img src="shipping.png" alt="Shipping Icon" style="width:120px; height: auto; margin-bottom: 1rem;">
+      <img src="icons/shipping.png" alt="Shipping Icon" style="width:120px; height: auto; margin-bottom: 1rem;">
        <h1 style="color: white;">Shipping</h1>
       <p style="color: #666;">Digitale Lösungen für globale Schifffahrt.</p>
     </div>
 
     <!-- Cargo -->
     <div class="fade-in" style="background-color: #0f172a; border-radius: 12px; padding: 2rem; width: 220px; text-align: center; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
-      <img src="cargo.png" alt="Cargo Icon" style="width: 120px; height: auto; margin-bottom: 1rem;">
+      <img src="icons/cargo.png" alt="Cargo Icon" style="width: 120px; height: auto; margin-bottom: 1rem;">
        <h1 style="color: white;">Luftfracht</h1>
       <p style="color: #666;">Effiziente Transport- und Logistikprozesse.</p>
     </div>
 
     <!-- Rail -->
     <div class="fade-in" style="background-color: #0f172a; border-radius: 12px; padding: 2rem; width: 220px; text-align: center; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
-      <img src="software.png" alt="Rail Icon" style="width: 120px; height: auto; margin-bottom: 1rem;">
+      <img src="icons/software.png" alt="Rail Icon" style="width: 120px; height: auto; margin-bottom: 1rem;">
        <h1 style="color: white;">Rail</h1>
       <p style="color: #666;">Digitale Transformation im Bahnwesen.</p>
     </div>   
  <!-- Rail -->
     <div class="fade-in" style="background-color: #0f172a; border-radius: 12px; padding: 2rem; width: 220px; text-align: center; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
-      <img src="rail.png" alt="Rail Icon" style="width: 120px; height: auto; margin-bottom: 1rem;">
+      <img src="icons/rail.png" alt="Rail Icon" style="width: 120px; height: auto; margin-bottom: 1rem;">
       <h1 style="color: white;">Software</h1>
       <p style="color: #666;">Digitale Transformation im Consulting Area.</p>
     </div>
 
     <!-- Banking -->
     <div class="fade-in" style="background-color: #0f172a; border-radius: 12px; padding: 2rem; width: 220px; text-align: center; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
-      <img src="banking.png" alt="Banking Icon" style="width: 120px; height: auto; margin-bottom: 1rem;">
+      <img src="icons/banking.png" alt="Banking Icon" style="width: 120px; height: auto; margin-bottom: 1rem;">
       <h1 style="color: white;">Banking</h1>
       <p style="color: #666;">Sichere & smarte Finanzlösungen.</p>
     </div>
 
     <!-- Automobil -->
     <div class="fade-in" style="background-color: #0f172a; border-radius: 12px; padding: 2rem; width: 220px; text-align: center; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
-      <img src="automotive.png" alt="Automobil Icon" style="width: 120px; height: auto; margin-bottom: 1rem;">
+      <img src="icons/automotive.png" alt="Automobil Icon" style="width: 120px; height: auto; margin-bottom: 1rem;">
       <h1 style="color: white;">Automobil</h1>
       <p style="color: #666;">Innovation für die Mobilität von morgen.</p>
     </div>
